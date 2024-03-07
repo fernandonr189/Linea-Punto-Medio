@@ -59,7 +59,7 @@ public class Canvas extends JFrame {
                     p += dy;
                 }
                 x += mX;
-                buffer.setRGB(x, y, a.getRGB());
+                pixel(x, y, a);
             }
         }
         else {
@@ -73,8 +73,12 @@ public class Canvas extends JFrame {
                     p += dx;
                 }
                 y += mY;
-                buffer.setRGB(x, y, a.getRGB());
+                pixel(x, y, a);
             }
         }
+    }
+
+    private void pixel(int x, int y, Color a) {
+        buffer.setRGB(x,y, a.getRGB());
     }
 }
